@@ -1,6 +1,9 @@
 import * as utils from './../utilities';
 import React from 'react';
 import './forms.css';
+import * as braze from "@braze/web-sdk";
+
+
 
 class UserAttributes extends React.Component {
 
@@ -9,7 +12,7 @@ class UserAttributes extends React.Component {
         firstName: "",
         lastName: "",
         emailAddress: "",
-        gender: "male",
+        gender: "m",
         birthday: "",
         country: "",
         homeCity: "",
@@ -24,6 +27,14 @@ class UserAttributes extends React.Component {
         utils.logMethod(e.target.id, value);
         
     }
+    componentDidMount(){
+        braze.getUser().getUserId(userId => {
+            //console.log("The user is: " + userId);
+            if (this.userId !== userId)
+            this.setState({userId:userId});
+        })
+    }
+
 
 
     render() {
@@ -60,12 +71,12 @@ class UserAttributes extends React.Component {
                     <div className="form-line">
                         <label htmlFor="gender" className="Label">Gender</label>
                         <select className="InputElement" id="gender" name="gender" value={this.state.gender} onChange={this.handleChange}>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                            <option value="unknown">Unknown</option>
-                            <option value="not applicable">Not Applicable</option>
-                            <option value="prefer not to answer">Prefer Not To Answer</option>
+                            <option value="m">Male</option>
+                            <option value="f">Female</option>
+                            <option value="o">Other</option>
+                            <option value="u">Unknown</option>
+                            <option value="n">Not Applicable</option>
+                            <option value="p">Prefer Not To Answer</option>
                         </select>
                         <button className="btn btn-primary" id="gender_button" onClick={e=> this.handleClick(e, this.state.gender)}>Submit</button>
 

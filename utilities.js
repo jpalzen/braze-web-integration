@@ -1,7 +1,7 @@
 import * as braze from "@braze/web-sdk"
 
 export function logMethod(name, value) {
-    //console.log(name + " " + value);
+    console.log(name + " " + value);
     switch (name) {
         case 'change_user_button':
             changeUser(value);
@@ -78,7 +78,7 @@ function logCountry(value) {
     braze.getUser().setCountry(value);
 }
 function logBirthday(value) {
-    braze.getUser().setDateOfBirth(value.substring(0, 4), value.substring(5, 7), value.substring(8));
+    braze.getUser().setDateOfBirth(value.substring(8), value.substring(5, 7), value.substring(0, 4));
 }
 function logHomeCity(value) {
     braze.getUser().setHomeCity(value);
