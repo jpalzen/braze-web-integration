@@ -2,9 +2,11 @@
 This repository provides a basic website layout and structure to simply integrate or create a connection with Braze and to start logging attributes, events and purchases. 
 
 ## Requirements
+```
 Node.js 8+
 Braze App Identifier Key
 Braze SDK Endpoint
+```
 
 ## Installation
 
