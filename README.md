@@ -16,10 +16,10 @@ Braze SDK Endpoint
 git clone https://github.com/jpalzen/braze-web-integration.git
 ```
 
-2. Navigate to the root directory and install dependencies for the server and client:
+2. Navigate to the root directory and install package dependencies:
 
 ```
-npm run install-dependencies
+npm install
 ```
 
 ## Usage
