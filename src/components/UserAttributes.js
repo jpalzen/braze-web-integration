@@ -28,11 +28,12 @@ class UserAttributes extends React.Component {
         
     }
     componentDidMount(){
-        braze.getUser().getUserId(userId => {
+        const userId = braze.getUser().getUserId();
             //console.log("The user is: " + userId);
-            if (this.userId !== userId)
+        if (this.userId !== userId) {
             this.setState({userId:userId});
-        })
+        }
+        
     }
 
 

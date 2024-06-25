@@ -55,9 +55,10 @@ class App extends React.Component {
 
 
   componentDidMount = () => {
-
     braze.initialize(process.env.REACT_APP_BRAZE_API_KEY, {
       baseUrl: process.env.REACT_APP_BRAZE_ENDPOINT,
+      enableLogging: true,
+      localization:'fr',
     });
     
     braze.automaticallyShowInAppMessages();
